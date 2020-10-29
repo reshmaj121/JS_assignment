@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display even, odd or prime number using loops</title>
+</head>
+<body>
+
+<script>
+for (i=0; i <= 100; i++)
+{
+    let isPrime = true;
+    if (i % 2 == 0) 
+    {
+        if (i > 1)
+        {
+            for (let j = 2; j < i; j++) 
+            {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) 
+            {
+                document.write(i + " is Even and Prime." + "<br>");
+            }
+            else if (i == 0)
+            {
+                document.write(i + " is Even." + "<br>");
+            } 
+            else 
+            {
+                document.write(i + " is Even." + "<br>");
+            }
+        }
+        else
+        {
+            document.write(i + " is Even." + "<br>");
+        }
+        
+    }
+    else if (i == 1 & i % 2 !== 0) 
+    {
+        document.write(i + " is Odd." + "<br>"); 
+    } 
+    else if(isPrime)
+    {
+        for (let j = 2; j < i; j++) 
+            {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) 
+            {
+                document.write(i + " is Odd and Prime." + "<br>");
+            }
+            else
+            {
+                document.write(i + " is Odd." + "<br>");
+            }
+    }
+    else
+    {
+            document.write(i + " is Odd." + "<br>");
+    }
+    
+}
+</script>
+</body>
+</html>

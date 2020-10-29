@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript conditional statement to sort three numbers</title>
+</head>
+<body>
+<script>
+    var i = 0;
+    var j = -1;
+    var k = 4;
+    if(i > j && i > k)
+    {
+        if(j > k)
+        {
+            window.alert(i + ", " + j + ", " + ", " + k);
+        }
+        else
+        {
+            window.alert(i + ", " + k + ", " + ", " + j);
+        }
+    }
+    else if(j > i && j > k)
+    {
+        if(i > k)
+        {
+            window.alert(j + ", " + i + ", " + ", " + k);
+        }
+        else
+        {
+            window.alert(j + ", " + k + ", " + ", " + i);
+        }
+    }
+    else if (k > i && k > j)
+    {
+        if (i > j)
+        {
+            window.alert(k + ", " + i + ", " + ", " + j);  
+        }
+        else
+        {
+            window.alert(k + ", " + j + ", " + ", " + i);  
+        }
+    }
+</script>
+</body>
+</html>

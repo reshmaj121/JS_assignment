@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a word within a string</title>
+</head>
+<body>
+<script>
+    function search(sentence, word)
+    {
+    
+        var x = 0;
+        var y = 0;
+    
+        for (a = 0; a < sentence.length; a++)
+            {
+            if(sentence[a] == word[0])
+                {
+                for(b = a; b < a + word.length; b++)
+                {
+                    if(sentence[b] == word[b-a])
+                    {
+                        y++;
+                    }
+                    if (y == word.length){
+                        x++;
+                    }
+                }
+                y=0;
+            }
+        }
+    return "'"+ word +"' was found "+ x +" times." + "<br><br>";
+    }
+document.write("The quick brown fox."  + "<br>")
+document.write(search("The quick brown fox", "fox"));
+document.write("aa, bb, cc, dd, aa"  + "<br>")
+document.write(search("aa, bb, cc, dd, aa", "aa"));
+</script>
+</body>
+</html>
