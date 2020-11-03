@@ -32,7 +32,7 @@
                 showTime();
                 var am_pm = "AM";
                 if(hour > 12) { hour = hour - 12; am_pm = "PM"; }
-                if(hour < 10) { hour = "0" + hour; }
+                //if(hour < 10) { hour = "0" + hour; }
                 document.getElementById('twelve_hours').innerHTML = hour + ":" + min + ":" + sec + " " + am_pm;
                 t = setTimeout(function() {
                     get_twelve_hours()
