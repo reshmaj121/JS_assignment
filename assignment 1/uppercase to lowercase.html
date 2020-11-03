@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converts string from upper case letters to lower case, and lower case letters to upper case</title>
+</head>
+<body>
+    Enter Sentence: <input type="text" id="sentence" /><br><br>
+    <button onclick="upper()">Uppercase</button>
+    <button onclick="lower()">Lowercase</button>
+    <script>
+        
+        function upper()
+        {
+            var uc = document.getElementById('sentence').value;
+            document.getElementById('sentence').value = uc.toUpperCase();
+        }
+
+        function lower()
+        {
+            var lc = document.getElementById('sentence').value;
+            document.getElementById('sentence').value = lc.toLowerCase();
+        }
+    </script>
+</body>
+</html>

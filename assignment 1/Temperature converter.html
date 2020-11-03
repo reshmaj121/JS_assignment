@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <p><strong>Fahrenheit:</strong> <input type="number" placeholder="Fahrenheit" onchange="temp_FtoC(this.value)" oninput="temp_FtoC(this.value)"> </p>
+    <p><strong>Celcius: </strong> <span id="FToC"></span><span>&#8451;</span></p>
+
+    <p><strong>Celcius:</strong> <input type="number" placeholder="Celcius" onchange="temp_CtoF(this.value)" oninput="temp_CtoF(this.value)"> </p>
+    <p><strong>Fahrenheit: </strong> <span id="CToF"></span><span>&#8457;</span></p>
+
+
+
+
+    <script>
+        function temp_FtoC(feh)
+        {
+            var feh = parseFloat(feh);
+            document.getElementById('FToC').innerHTML = (feh - 32) / 1.8;
+            
+        }
+        function temp_CtoF(cel)
+        {
+            var cel = parseFloat(cel);
+            document.getElementById('CToF').innerHTML = (cel * 1.8) + 32;
+        }
+    </script>
+</body>
+</html>

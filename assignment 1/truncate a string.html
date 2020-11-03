@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truncate a string to a certain number of words</title>
+</head>
+<body>
+<script>
+    var sentence = 'Truncate a string to a certain number of words';
+    function truncate(sentence, no_of_words) {
+    var words = sentence.split(' ');
+
+    if (no_of_words >= words.length) 
+    {
+        return sentence;
+    }
+
+  var truncated = words.slice(0, no_of_words);
+  return truncated.join(' ');
+}
+document.write("This is main statement " + "<br><strong>" + sentence + "</strong>" + "<br><br>");
+
+document.write("This is truncated staement till the word 6" + "<br><strong>" + truncate(sentence, 6) + "</strong>");
+
+
+
+
+</script>
+</body>
+</html>

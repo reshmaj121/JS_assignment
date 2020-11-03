@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalize the first letter of each word in a string</title>
+</head>
+<body>
+<script>
+    var myText = "capitalize the first letter of each word in a string";
+    capText(myText);
+
+    function capText(str) 
+    {
+        var split_str = str.toLowerCase().split(' ');
+        var new_str = ""; 
+        for (var i = 0; i < split_str.length; i++) 
+        {
+            new_str = new_str + (split_str[i].charAt(0).toUpperCase() + split_str[i].slice(1) + " ");
+        }
+        document.write(new_str);
+    }
+</script>
+</body>
+</html>

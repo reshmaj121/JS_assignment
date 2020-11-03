@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide email addresses to protect from unauthorized user</title>
+</head>
+<body>
+    <script>
+        new_email = function (email)
+        {
+            var before_at = email.split("@");
+            var split1 = before_at[0];
+            var diff = split1.length / 2;
+            split1 = split1.substring(0, (split1.length - diff));
+            var split2 = before_at[1];
+            return split1 + "....@" + split2;
+        };
+        document.write(new_email("eddygrant@example.com"));
+    </script>
+</body>
+</html>
