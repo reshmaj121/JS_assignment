@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove items from a dropdown list</title>
+</head>
+<body>
+    <form> 
+        
+        <label for="courseList">Choose Course:</label>
+        <select id="courseList">
+            <option value="Web Development">Web Development</option>
+            <option value="Python">Python</option>
+            <option value="Fashion Designing">Fashion Designing</option>
+            <option value="Javascript">Javascript</option>
+            <option value="Political Science">Political Science</option>
+        </select>
+        <input type = "button" onclick = "select_remove()" value = "Click to Remove">
+        
+    </form>
+    <script>
+        function select_remove()
+        {
+            var course = document.getElementById('courseList');
+            course.remove(course.selectedIndex);
+            alert("Selected Course Removed");
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove duplicate items from an array</title>
+</head>
+<body>
+    <script>
+        let array = ['A', 'e', 'A', 'C', 'i', 'D', 'E', 'C', 'i', 'a', 'E', 'c', 'd'];
+        let new_array = [];
+        array.forEach((i) => {
+            if (!new_array.includes(i)) {
+                new_array.push(i);
+            }
+        });
+        document.write("Original Array:", array + "<br>");
+        document.write("Array after removing duplicate items: ", new_array);
+    </script>
+</body>
+</html>

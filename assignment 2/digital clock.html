@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style type="text/css">
+       #twelve_hours, #twentyfour_hours
+       {
+           font-size: 40px;
+           margin: 0 auto;
+       }
+    </style>
+</head>
+<body>
+    <div id="twelve_hours"></div>
+    <div id="twentyfour_hours"></div><br>
+    <button type="button" onclick="twelvehours()">12 Hour Clock</button>
+    <button type="button" onclick="twentyfourhours()">24 Hour Clock</button>
+   
+    <script>
+        window.onload = function() 
+        {
+            var hour, min, sec;
+            document.getElementById('twelve_hours').style.display = 'none';
+            document.getElementById('twentyfour_hours').style.display = 'none';
+            get_twelve_hours();
+            get_twentyfour_hours();  
+
+            function get_twelve_hours()
+            {
+                showTime();
+                var am_pm = "AM";
+                if(hour > 12) { hour = hour - 12; am_pm = "PM"; }
+                if(hour < 10) { hour = "0" + hour; }
+                document.getElementById('twelve_hours').innerHTML = hour + ":" + min + ":" + sec + " " + am_pm;
+                t = setTimeout(function() {
+                    get_twelve_hours()
+                }, 1000);
+                return hour;
+                
+            }
+        
+            function get_twentyfour_hours()
+            {
+                showTime();
+                document.getElementById('twentyfour_hours').innerHTML = hour + ":" + min + ":" + sec;
+                var t = setTimeout(function() {
+                    get_twentyfour_hours()
+                }, 1000);
+            }
+            function showTime()
+            {
+                var time = new Date();
+                hour = time.getHours();
+                min = time.getMinutes();
+                sec = time.getSeconds();
+
+
+                if(hour < 10) { hour = "0" + hour; }
+                if(min < 10) { min = "0" + min; }
+                if(sec < 10) { sec = "0" + sec; }
+                return hour, min, sec;
+                
+            }
+        }
+        function twelvehours() 
+        {
+            document.getElementById('twentyfour_hours').style.display = 'none';
+            document.getElementById('twelve_hours').style.display = '';
+        }
+
+        function twentyfourhours() 
+        {
+            document.getElementById('twelve_hours').style.display = 'none';
+            document.getElementById('twentyfour_hours').style.display = '';
+        }
+
+        
+       
+    </script>
+</body>
+</html>

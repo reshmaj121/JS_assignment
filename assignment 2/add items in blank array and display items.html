@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add items in an blank array and display the items.</title>
+</head>
+<body>
+    
+    <input type="text" id="add_item">
+    <input type="button" id="button1" value="Add" onclick="add_items();">
+    <input type="button" id="button2" value="Display" onclick="display_items();"><br><br>
+    <div id="Result"></div>
+    <script>
+    var i = 0;
+    var array = [];
+
+    function add_items()
+    {
+        var t = document.getElementById('add_item').value;
+        if (t == "")
+        {
+            alert("Please enter items to add.")
+        }
+        else
+        {
+            array[i] = document.getElementById("add_item").value;
+            alert("Element: " + array[i] + " Added at index " + i);
+            i++;
+            document.getElementById("add_item").value = "";
+        }
+    }
+
+    function display_items()
+    {
+        var x = " ";   
+            
+        for (var j = 0; j < array.length; j++)
+        {
+            x += "Element " + j + " = " + array[j] + "<br/>";
+        }
+        document.getElementById("Result").innerHTML = x;
+    }
+</script>
+</body>
+</html>

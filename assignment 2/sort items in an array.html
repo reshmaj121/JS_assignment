@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort the items of an array</title>
+</head>
+<body>
+    <script>
+        //First way with sort() method
+        //var arr1 = [3, 8, 7, 6, 5, -4, 3, 2, 1];
+        //arr1.sort();
+        //document.write(arr1);
+
+        //second way
+        var arr1 = [3,8,7,6,5,-4,3,2,1];
+        var new_arr = [];
+        var min = arr1[0];
+        var position;
+        max = arr1[0];
+        for (i = 0; i < arr1.length; i++)
+        {
+                if (max < arr1[i]) max = arr1[i];
+        }
+
+        for (var i = 0; i < arr1.length; i++)
+        {
+                for (var j = 0; j < arr1.length; j++)
+                {
+                        if (arr1[j] != "a")
+                        {
+                                if (min > arr1[j]) 
+                                {
+                                        min = arr1[j];
+                                        position = j;
+                                }
+                        }
+                }
+                new_arr[i] = min;
+                arr1[position] = "a";
+                min = max;
+        }
+        document.write("Sorted items of given array [3, 8, 7, 6, 5, -4, 3, 2, 1] is ", new_arr);
+
+    </script>
+</body>
+</html>
