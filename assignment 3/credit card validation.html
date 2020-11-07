@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Validation</title>
+</head>
+<body>
+    <script>
+    function validateCreditCard(creditNumber)
+    {
+        if(creditNumber.length !== 16)
+        {
+            return false;
+        }
+        for(var i = 0; i < creditNumber.length; i++)
+        {
+            var newNumber = creditNumber[i];
+            newNumber = Number.parseInt(newNumber);
+            if(!Number.isInteger(newNumber))
+            {
+                return false;
+            }
+        }
+
+        var digitNotSame = {};
+        for(var i = 0; i < creditNumber.length; i++)
+        {
+            digitNotSame[creditNumber[i]] = true;
+        }
+        if(Object.keys(digitNotSame).length < 2)
+        {
+            return false;
+        }
+
+    
+        if(creditNumber[creditNumber.length - 1] % 2 !== 0)
+        {
+            return false;
+        }
+
+        var sumOfDigits = 0;
+        for(var i = 0; i < creditNumber.length; i++)
+        {
+            sumOfDigits += Number(creditNumber[i]);
+        }
+        if(sumOfDigits <= 16)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    console.log(validateCreditCard('9999777788880000')); 
+    console.log(validateCreditCard('6666666666661666')); 
+
+    console.log(validateCreditCard('a92332119c011112')); 
+    console.log(validateCreditCard('4444444444444444')); 
+    console.log(validateCreditCard('1111111111111110'));  
+    console.log(validateCreditCard('6666666666666661')); 
+    </script>
+</body>
+</html>

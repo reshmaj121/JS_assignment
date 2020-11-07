@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get the width and height of the window (any time the window is resized).</title>
+</head>
+<body onload="window_size()" onresize="window_size()">
+    <h3 id="width_height"></h3>
+
+    <script>
+        function window_size()
+        {
+            var wid =  window.innerWidth;
+            var hight = window.innerHeight;
+
+            var final_size = "Width of Window: " + wid + "px"+ "<br><br> Height of Window: " + hight + "px";
+            document.getElementById('width_height').innerHTML = final_size;
+        }
+    </script>
+</body>
+</html>

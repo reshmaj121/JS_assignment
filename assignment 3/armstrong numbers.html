@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Numbers of 3 digits</title>
+</head>
+<body>
+    <script>
+    function armstrongNumber() 
+    {
+        for (var a = 1; a < 10; a++) 
+        {
+            for (var b = 0; b < 10; b++) 
+            {
+                for (var c = 0; c < 10; c++)
+                {
+                    var cal = (Math.pow(a,3) + Math.pow(b,3) + Math.pow(c,3));
+                    var final_num = (a * 100 + b * 10 +  c);
+                    if (cal == final_num) 
+                    {     
+                        document.write("Three digit armstrong number is: ", cal + "<br>")
+                    }
+                }
+            }
+        }
+    }
+    armstrongNumber();
+    </script>
+</body>
+</html>
