@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sort Array</title>
+</head>
+<body>
+<script>
+     
+    var unsorted = [34, 7, 23, 32, 5, 62];
+    function merge(left, right) 
+    {
+        var sorted = [];
+        while (left.length && right.length) 
+        {
+            if (left[0] <= right[0])
+            {
+                sorted.push(left[0]);
+                left = left.slice(1)
+            }
+            else 
+            {
+                sorted.push(right[0]);
+                right = right.slice(1)
+            }
+        }
+        while (left.length)
+            sorted.push(left.shift());
+        while (right.length)
+            sorted.push(right.shift());
+        return sorted;
+    }
+    function mergesort(arr) 
+    {
+        if (arr.length < 2) 
+        {
+            return arr; 
+        }
+        else 
+        {
+            var midpoint = parseInt(arr.length / 2);
+            var left   = arr.slice(0, midpoint);
+            var right  = arr.slice(midpoint, arr.length);
+            return merge(mergesort(left), mergesort(right));
+        }
+    }
+    document.write("<h4>The original array is: " + unsorted + "</h4>");
+    document.write("<h4>The sorted array is: " + mergesort(unsorted) + "</h4>");
+</script>
+</body>
+</html>

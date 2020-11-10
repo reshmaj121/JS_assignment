@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove duplicate items from an array</title>
+</head>
+<body>
+    <script>
+        function removeDuplicate(array)
+        {
+            var newList = [];
+            
+            for(i=0; i < array.length; i++){
+                if(newList.indexOf(array[i]) === -1) 
+                {
+                    newList.push(array[i]);
+                }
+            }
+            return newList;
+        }
+        
+        var names = ["john", "Peter", "Arti", "john", "shiv", "Yash", "arti", "Yash", "Shiv", "peter" ];
+        document.write("Original Array: " +names + "<br><br>");
+        var uniqueNames = removeDuplicate(names);
+        document.write("Unique Array: " + uniqueNames); 
+    </script>  
+</body>
+</html>

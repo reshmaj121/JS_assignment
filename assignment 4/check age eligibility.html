@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check age eligibility based on Date of Birth</title>
+</head>
+<body>
+    Enter Date of Birth: <input type="text" id="dob" placeholder="DD/MM/YYYY">
+    
+    <input type="button" value="Check Eligibility" onclick="ageCount()">
+    <script>
+        function ageCount() 
+        {
+            var date1 = new Date();
+            var dob = document.getElementById("dob").value;
+            var date2 = new Date(dob);
+            var pattern = /^\d{1,2}\/\d{1,2}\/\d{4}$/; 
+            if (pattern.test(dob)) 
+            {
+                var currentYear = date1.getFullYear(); 
+                var dobYear = date2.getFullYear(); 
+                var age = currentYear - dobYear;
+                console.log("Your Age : " + age);
+                
+                if(14 <= age && age <= 24)
+                {
+                    alert("Your age is: " + age + "\nYou are eligible for our study.");
+
+                }
+                else
+                {
+                    alert("Your age is: " + age + "\nYou are not eligible for our study.");
+                }
+            } 
+            else 
+            {
+                alert("Invalid date format. Please enter in (DD/MM/YYYY) format!");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
